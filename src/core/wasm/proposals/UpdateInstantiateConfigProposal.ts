@@ -28,7 +28,8 @@ export class UpdateInstantiateConfigProposal extends JSONSerializable<
   public static fromAmino(
     data: UpdateInstantiateConfigProposal.Amino,
     _?: boolean
-  ): UpdateInstantiateConfigProposal {
+  ) {
+    _;
     const {
       value: { title, description, access_config_updates },
     } = data as UpdateInstantiateConfigProposal.Amino;
@@ -40,6 +41,7 @@ export class UpdateInstantiateConfigProposal extends JSONSerializable<
   }
 
   public toAmino(_?: boolean): UpdateInstantiateConfigProposal.Amino {
+    _;
     const { title, description, access_config_updates } = this;
     return {
       type: 'wasm/UpdateInstantiateConfigProposal',
@@ -54,7 +56,8 @@ export class UpdateInstantiateConfigProposal extends JSONSerializable<
   public static fromProto(
     proto: UpdateInstantiateConfigProposal.Proto,
     _?: boolean
-  ): UpdateInstantiateConfigProposal {
+  ) {
+    _;
     return new UpdateInstantiateConfigProposal(
       proto.title,
       proto.description,
@@ -63,6 +66,7 @@ export class UpdateInstantiateConfigProposal extends JSONSerializable<
   }
 
   public toProto(_?: boolean): UpdateInstantiateConfigProposal.Proto {
+    _;
     const { title, description, access_config_updates } = this;
     return UpdateInstantiateConfigProposal_pb.fromPartial({
       title,
@@ -70,6 +74,7 @@ export class UpdateInstantiateConfigProposal extends JSONSerializable<
       accessConfigUpdates: access_config_updates.map(acu => acu.toProto()),
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.UpdateInstantiateConfigProposal',
@@ -92,7 +97,8 @@ export class UpdateInstantiateConfigProposal extends JSONSerializable<
   public static fromData(
     data: UpdateInstantiateConfigProposal.Data,
     _?: boolean
-  ): UpdateInstantiateConfigProposal {
+  ) {
+    _;
     const { title, description, access_config_updates } =
       data as UpdateInstantiateConfigProposal.Data;
     return new UpdateInstantiateConfigProposal(
@@ -103,6 +109,7 @@ export class UpdateInstantiateConfigProposal extends JSONSerializable<
   }
 
   public toData(_?: boolean): UpdateInstantiateConfigProposal.Data {
+    _;
     const { title, description, access_config_updates } = this;
     return {
       '@type': '/cosmwasm.wasm.v1.UpdateInstantiateConfigProposal',

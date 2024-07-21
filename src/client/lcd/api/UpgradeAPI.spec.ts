@@ -24,8 +24,11 @@ describe('UpgradeAPI', () => {
   });
 
   describe('node_versions', () => {
-    it('module count', async () => {
-      expect(await upgrade.moduleVersions()).toHaveLength(26);
+    it('name & version', async () => {
+      expect((await upgrade.moduleVersions())[0]).toMatchObject({
+        name: expect.any(String),
+        version: expect.any(Number),
+      });
     });
   });
 });

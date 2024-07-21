@@ -33,10 +33,8 @@ export class MsgInstantiateContract extends JSONSerializable<
     this.init_coins = new Coins(init_coins);
   }
 
-  public static fromAmino(
-    data: MsgInstantiateContract.Amino,
-    _?: boolean
-  ): MsgInstantiateContract {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: MsgInstantiateContract.Amino, _?: boolean) {
     const {
       value: { sender, admin, code_id, msg, funds, label },
     } = data as MsgInstantiateContract.AminoV2;
@@ -50,6 +48,7 @@ export class MsgInstantiateContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): MsgInstantiateContract.Amino {
     const { sender, admin, code_id, init_msg, init_coins, label } = this;
     return {
@@ -65,10 +64,8 @@ export class MsgInstantiateContract extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: MsgInstantiateContract.Proto,
-    _?: boolean
-  ): MsgInstantiateContract {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: MsgInstantiateContract.Proto, _?: boolean) {
     const p = proto as MsgInstantiateContract_pb;
     return new MsgInstantiateContract(
       p.sender,
@@ -80,6 +77,7 @@ export class MsgInstantiateContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): MsgInstantiateContract.Proto {
     const { sender, admin, code_id, init_msg, init_coins, label } = this;
     return MsgInstantiateContract_pb.fromPartial({
@@ -111,10 +109,8 @@ export class MsgInstantiateContract extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: MsgInstantiateContract.Data,
-    _?: boolean
-  ): MsgInstantiateContract {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: MsgInstantiateContract.Data, _?: boolean) {
     const { sender, admin, code_id, label, msg, funds } =
       data as MsgInstantiateContract.DataV2;
     return new MsgInstantiateContract(
@@ -127,6 +123,7 @@ export class MsgInstantiateContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): MsgInstantiateContract.Data {
     const { sender, admin, code_id, label, init_msg, init_coins } = this;
     return {

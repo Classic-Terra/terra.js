@@ -32,6 +32,7 @@ export class MsgExecuteContract extends JSONSerializable<
     data: MsgExecuteContract.Amino,
     _?: boolean
   ): MsgExecuteContract {
+    _;
     const {
       value: { sender, contract, msg, funds },
     } = data as MsgExecuteContract.AminoV2;
@@ -43,6 +44,7 @@ export class MsgExecuteContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): MsgExecuteContract.Amino {
     const { sender, contract, execute_msg, coins } = this;
     return {
@@ -60,6 +62,7 @@ export class MsgExecuteContract extends JSONSerializable<
     proto: MsgExecuteContract.Proto,
     _?: boolean
   ): MsgExecuteContract {
+    _;
     const p = proto as MsgExecuteContract_pb;
     return new MsgExecuteContract(
       p.sender,
@@ -69,6 +72,7 @@ export class MsgExecuteContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): MsgExecuteContract.Proto {
     const { sender, contract, execute_msg, coins } = this;
     return MsgExecuteContract_pb.fromPartial({
@@ -102,11 +106,13 @@ export class MsgExecuteContract extends JSONSerializable<
     data: MsgExecuteContract.Data,
     _?: boolean
   ): MsgExecuteContract {
+    _;
     const { sender, contract, msg, funds } = data as MsgExecuteContract.DataV2;
     return new MsgExecuteContract(sender, contract, msg, Coins.fromData(funds));
   }
 
   public toData(_?: boolean): MsgExecuteContract.Data {
+    _;
     const { sender, contract, execute_msg, coins } = this;
     return {
       '@type': '/cosmwasm.wasm.v1.MsgExecuteContract',

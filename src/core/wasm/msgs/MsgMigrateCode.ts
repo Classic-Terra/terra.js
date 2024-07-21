@@ -2,7 +2,6 @@ import { JSONSerializable } from '../../../util/json';
 import { AccAddress } from '../../bech32';
 import { Any } from '@terra-money/terra.proto/google/protobuf/any';
 import { MsgMigrateCode as MsgMigrateCode_legacy_pb } from '@classic-terra/terra.proto/terra/wasm/v1beta1/tx';
-import * as Long from 'long';
 
 export class MsgMigrateCode extends JSONSerializable<
   MsgMigrateCode.Amino,
@@ -26,10 +25,13 @@ export class MsgMigrateCode extends JSONSerializable<
     _data: MsgMigrateCode.Amino,
     _?: boolean
   ): MsgMigrateCode {
+    _data;
+    _;
     throw new Error('Not supported for the network');
   }
 
   public toAmino(_?: boolean): MsgMigrateCode.Amino {
+    _;
     throw new Error('Not supported for the network');
   }
 
@@ -37,18 +39,24 @@ export class MsgMigrateCode extends JSONSerializable<
     _proto: MsgMigrateCode.Proto,
     _?: boolean
   ): MsgMigrateCode {
+    _proto;
+    _;
     throw new Error('Not supported for the network');
   }
 
   public toProto(_?: boolean): MsgMigrateCode.Proto {
+    _;
     throw new Error('Not supported for the network');
   }
 
   public packAny(_?: boolean): Any {
+    _;
     throw new Error('Not supported for the network');
   }
 
   public static unpackAny(_msgAny: Any, _?: boolean): MsgMigrateCode {
+    _msgAny;
+    _;
     throw new Error('Not supported for the network');
   }
 
@@ -56,10 +64,13 @@ export class MsgMigrateCode extends JSONSerializable<
     _data: MsgMigrateCode.Data,
     _?: boolean
   ): MsgMigrateCode {
+    _data;
+    _;
     throw new Error('Not supported for the network');
   }
 
   public toData(_?: boolean): MsgMigrateCode.Data {
+    _;
     throw new Error('Not supported for the network');
   }
 }

@@ -1,8 +1,4 @@
-import {
-  MsgSubmitProposal,
-  LocalTerra,
-  ParameterChangeProposal,
-} from '../src';
+import { MsgSubmitProposal, LocalTerra, ParameterChangeProposal } from '../src';
 
 // test1 key from localterra accounts
 const terra = new LocalTerra();
@@ -138,8 +134,7 @@ const proposal = new ParameterChangeProposal('testing params', 'yay!', [
   {
     subspace: 'gov',
     key: 'tallyparams',
-    value:
-      '{"quorum":"0.4","threshold":"0.5","veto_threshold":"0.334"}',
+    value: '{"quorum":"0.4","threshold":"0.5","veto_threshold":"0.334"}',
   },
   {
     subspace: 'mint',

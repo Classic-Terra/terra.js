@@ -27,10 +27,8 @@ export class MigrateContractProposal extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: MigrateContractProposal.Amino,
-    _?: boolean
-  ): MigrateContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: MigrateContractProposal.Amino, _?: boolean) {
     const {
       value: { title, description, contract, code_id, msg },
     } = data as MigrateContractProposal.Amino;
@@ -43,6 +41,7 @@ export class MigrateContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): MigrateContractProposal.Amino {
     const { title, description, contract, new_code_id, migrate_msg } = this;
     return {
@@ -57,10 +56,8 @@ export class MigrateContractProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: MigrateContractProposal.Proto,
-    _?: boolean
-  ): MigrateContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: MigrateContractProposal.Proto, _?: boolean) {
     return new MigrateContractProposal(
       proto.title,
       proto.description,
@@ -70,6 +67,7 @@ export class MigrateContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): MigrateContractProposal.Proto {
     const { title, description, contract, new_code_id, migrate_msg } = this;
     return MigrateContractProposal_pb.fromPartial({
@@ -80,6 +78,7 @@ export class MigrateContractProposal extends JSONSerializable<
       msg: Buffer.from(JSON.stringify(migrate_msg), 'utf-8'),
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.MigrateContractProposal',
@@ -99,10 +98,8 @@ export class MigrateContractProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: MigrateContractProposal.Data,
-    _?: boolean
-  ): MigrateContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: MigrateContractProposal.Data, _?: boolean) {
     const { title, description, contract, code_id, msg } =
       data as MigrateContractProposal.Data;
     return new MigrateContractProposal(
@@ -114,6 +111,7 @@ export class MigrateContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): MigrateContractProposal.Data {
     const { title, description, contract, new_code_id, migrate_msg } = this;
     return {

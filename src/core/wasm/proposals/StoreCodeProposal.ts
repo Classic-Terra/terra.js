@@ -29,10 +29,8 @@ export class StoreCodeProposal extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: StoreCodeProposal.Amino,
-    _?: boolean
-  ): StoreCodeProposal {
+  public static fromAmino(data: StoreCodeProposal.Amino, _?: boolean) {
+    _;
     const {
       value: {
         title,
@@ -54,6 +52,7 @@ export class StoreCodeProposal extends JSONSerializable<
   }
 
   public toAmino(_?: boolean): StoreCodeProposal.Amino {
+    _;
     const {
       title,
       description,
@@ -73,10 +72,8 @@ export class StoreCodeProposal extends JSONSerializable<
     };
   }
 
-  public static fromData(
-    data: StoreCodeProposal.Data,
-    _?: boolean
-  ): StoreCodeProposal {
+  public static fromData(data: StoreCodeProposal.Data, _?: boolean) {
+    _;
     const {
       title,
       description,
@@ -96,6 +93,7 @@ export class StoreCodeProposal extends JSONSerializable<
   }
 
   public toData(_?: boolean): StoreCodeProposal.Data {
+    _;
     const {
       title,
       description,
@@ -113,10 +111,8 @@ export class StoreCodeProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: StoreCodeProposal.Proto,
-    _?: boolean
-  ): StoreCodeProposal {
+  public static fromProto(proto: StoreCodeProposal.Proto, _?: boolean) {
+    _;
     return new StoreCodeProposal(
       proto.title,
       proto.description,
@@ -129,6 +125,7 @@ export class StoreCodeProposal extends JSONSerializable<
   }
 
   public toProto(_?: boolean): StoreCodeProposal.Proto {
+    _;
     const {
       title,
       description,

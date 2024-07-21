@@ -1,5 +1,5 @@
 import { LCDClient, MsgSend, MnemonicKey } from '../src';
-import { SignMode } from '@terraclassic-community/terra.proto/cosmos/tx/signing/v1beta1/signing';
+import { SignMode } from '@classic-terra/terra.proto/cosmos/tx/signing/v1beta1/signing';
 
 async function main() {
   // create a key out of a mnemonic
@@ -31,7 +31,7 @@ async function main() {
       memo: 'test from terra.js!',
     })
     .then(tx => {
-    	/*
+      /*
     	tx.body.messages[0] = new MsgSend(
     'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v',
     'terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp',

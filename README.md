@@ -13,7 +13,7 @@ The JavaScript SDK for Terra
 
 <p align="center">
   <img alt="GitHub" src="https://img.shields.io/github/license/classic-terra/terra.js">
-  <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@terraclassic-community/terra.js">
+  <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@classic-terra/terra.js">
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@ The JavaScript SDK for Terra
   ·
   <a href="https://classic-terra.github.io/terra.js/">API Reference</a>
   ·
-  <a href="https://www.npmjs.com/package/@terraclassic-community/terra.js">NPM Package</a>
+  <a href="https://www.npmjs.com/package/@classic-terra/terra.js">NPM Package</a>
   ·
   <a href="https://github.com/classic-terra/terra.js">GitHub</a>
 </p>
@@ -43,10 +43,10 @@ We highly suggest using Terra.js with TypeScript, or JavaScript in a code editor
 
 ## Installation
 
-Grab the latest version off [NPM](https://www.npmjs.com/package/@terraclassic-community/terra.js):
+Grab the latest version off [NPM](https://www.npmjs.com/package/@classic-terra/terra.js):
 
 ```sh
-npm install @terraclassic-community/terra.js
+npm install @classic-terra/terra.js
 ```
 
 ## Usage
@@ -56,18 +56,18 @@ Terra.js can be used in Node.js, as well as inside the browser. Please check the
 ### Getting blockchain data
 :exclamation: terra.js can connect both terra-classic and terra network. If you want to communicate with classic chain, you have to set isClassic as `true`.
 ```ts
-import { LCDClient, Coin } from '@terraclassic-community/terra.js';
+import { LCDClient, Coin } from '@classic-terra/terra.js';
 
 // connect to pisco testnet
 const terra = new LCDClient({
-  URL: 'https://pisco-lcd.terra.dev',
-  chainID: 'pisco-1',
+  URL: 'https://lcd.terra-classic.hexxagon.dev',
+  chainID: 'octagon-1',
   isClassic: false  // if it is unset, LCDClient assumes the flag is false.
 });
 
 // connect to columbus-5 terra classic network
 const terra = new LCDClient({
-  URL: 'https://columbus-lcd.terra.dev',
+  URL: 'https://lcd.terra-classic.hexxagon.io',
   chainID: 'columbus-5',
   isClassic: true  // *set to true to connect terra-classic chain*
 });
@@ -88,7 +88,7 @@ console.log(balance);
 First, [get](https://faucet.terraclassic.community/) some testnet tokens for `terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v`, or use [LocalTerra](https://www.github.com/classic-terra/LocalTerra).
 
 ```ts
-import { LCDClient, MsgSend, MnemonicKey } from '@terraclassic-community/terra.js';
+import { LCDClient, MsgSend, MnemonicKey } from '@classic-terra/terra.js';
 
 // create a key out of a mnemonic
 const mk = new MnemonicKey({
@@ -98,8 +98,8 @@ const mk = new MnemonicKey({
 
 // connect to bombay testnet
 const terra = new LCDClient({
-  URL: 'https://pisco-lcd.terra.dev',
-  chainID: 'pisco-1',
+  URL: 'https://lcd.terra-classic.hexxagon.dev',
+  chainID: 'octagon-1',
 });
 
 // To use LocalTerra
@@ -132,14 +132,14 @@ wallet
 
 ## Terra.js in the browser
 
-You can access all the objects of the `@terraclassic-community/terra.js` from the global `Terra` object if you load Terra.js with a `<script>` tag.
+You can access all the objects of the `@classic-terra/terra.js` from the global `Terra` object if you load Terra.js with a `<script>` tag.
 
 Include the following in your browser:
 
 ```html
 <script
   crossorigin
-  src="https://unpkg.com/@terraclassic-community/terra.js/dist/bundle.js"
+  src="https://unpkg.com/@classic-terra/terra.js/dist/bundle.js"
 ></script>
 ```
 

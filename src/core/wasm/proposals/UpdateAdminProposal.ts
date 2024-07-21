@@ -24,16 +24,15 @@ export class UpdateAdminProposal extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: UpdateAdminProposal.Amino,
-    _?: boolean
-  ): UpdateAdminProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: UpdateAdminProposal.Amino, _?: boolean) {
     const {
       value: { title, description, contract, new_admin },
     } = data as UpdateAdminProposal.Amino;
     return new UpdateAdminProposal(title, description, contract, new_admin);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): UpdateAdminProposal.Amino {
     const { title, description, contract, new_admin } = this;
     return {
@@ -47,10 +46,8 @@ export class UpdateAdminProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: UpdateAdminProposal.Proto,
-    _?: boolean
-  ): UpdateAdminProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: UpdateAdminProposal.Proto, _?: boolean) {
     return new UpdateAdminProposal(
       proto.title,
       proto.description,
@@ -59,6 +56,7 @@ export class UpdateAdminProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): UpdateAdminProposal.Proto {
     const { title, description, contract, new_admin } = this;
     return UpdateAdminProposal_pb.fromPartial({
@@ -68,6 +66,7 @@ export class UpdateAdminProposal extends JSONSerializable<
       newAdmin: new_admin,
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.UpdateAdminProposal',
@@ -85,15 +84,14 @@ export class UpdateAdminProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: UpdateAdminProposal.Data,
-    _?: boolean
-  ): UpdateAdminProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: UpdateAdminProposal.Data, _?: boolean) {
     const { title, description, contract, new_admin } =
       data as UpdateAdminProposal.Data;
     return new UpdateAdminProposal(title, description, contract, new_admin);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): UpdateAdminProposal.Data {
     const { title, description, contract, new_admin } = this;
     return {

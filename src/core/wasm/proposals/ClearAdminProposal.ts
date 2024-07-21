@@ -25,16 +25,15 @@ export class ClearAdminProposal extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: ClearAdminProposal.Amino,
-    _?: boolean
-  ): ClearAdminProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: ClearAdminProposal.Amino, _?: boolean) {
     const {
       value: { title, description, contract },
     } = data as ClearAdminProposal.Amino;
     return new ClearAdminProposal(title, description, contract);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): ClearAdminProposal.Amino {
     const { title, description, contract } = this;
     return {
@@ -47,10 +46,8 @@ export class ClearAdminProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: ClearAdminProposal.Proto,
-    _?: boolean
-  ): ClearAdminProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: ClearAdminProposal.Proto, _?: boolean) {
     return new ClearAdminProposal(
       proto.title,
       proto.description,
@@ -58,6 +55,7 @@ export class ClearAdminProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): ClearAdminProposal.Proto {
     const { title, description, contract } = this;
     return ClearAdminProposal_pb.fromPartial({
@@ -66,6 +64,7 @@ export class ClearAdminProposal extends JSONSerializable<
       contract,
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.ClearAdminProposal',
@@ -83,14 +82,13 @@ export class ClearAdminProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: ClearAdminProposal.Data,
-    _?: boolean
-  ): ClearAdminProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: ClearAdminProposal.Data, _?: boolean) {
     const { title, description, contract } = data as ClearAdminProposal.Data;
     return new ClearAdminProposal(title, description, contract);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): ClearAdminProposal.Data {
     const { title, description, contract } = this;
     return {

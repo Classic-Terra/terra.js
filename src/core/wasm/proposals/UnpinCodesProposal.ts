@@ -25,10 +25,8 @@ export class UnpinCodesProposal extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: UnpinCodesProposal.Amino,
-    _?: boolean
-  ): UnpinCodesProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: UnpinCodesProposal.Amino, _?: boolean) {
     const {
       value: { title, description, code_ids },
     } = data as UnpinCodesProposal.Amino;
@@ -39,6 +37,7 @@ export class UnpinCodesProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): UnpinCodesProposal.Amino {
     const { title, description, code_ids } = this;
     return {
@@ -51,10 +50,8 @@ export class UnpinCodesProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: UnpinCodesProposal.Proto,
-    _?: boolean
-  ): UnpinCodesProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: UnpinCodesProposal.Proto, _?: boolean) {
     return new UnpinCodesProposal(
       proto.title,
       proto.description,
@@ -62,6 +59,7 @@ export class UnpinCodesProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): UnpinCodesProposal.Proto {
     const { title, description, code_ids } = this;
     return UnpinCodesProposal_pb.fromPartial({
@@ -70,6 +68,7 @@ export class UnpinCodesProposal extends JSONSerializable<
       codeIds: code_ids.map(cid => Long.fromNumber(cid)),
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.UnpinCodesProposal',
@@ -87,10 +86,8 @@ export class UnpinCodesProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: UnpinCodesProposal.Data,
-    _?: boolean
-  ): UnpinCodesProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: UnpinCodesProposal.Data, _?: boolean) {
     const { title, description, code_ids } = data as UnpinCodesProposal.Data;
     return new UnpinCodesProposal(
       title,
@@ -99,6 +96,7 @@ export class UnpinCodesProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): UnpinCodesProposal.Data {
     const { title, description, code_ids } = this;
     return {

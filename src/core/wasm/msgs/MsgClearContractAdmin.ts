@@ -17,10 +17,8 @@ export class MsgClearContractAdmin extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: MsgClearContractAdmin.Amino,
-    _?: boolean
-  ): MsgClearContractAdmin {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: MsgClearContractAdmin.Amino, _?: boolean) {
     const {
       value: { sender, contract },
     } = data as MsgClearContractAdmin.AminoV2;
@@ -39,14 +37,13 @@ export class MsgClearContractAdmin extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    data: MsgClearContractAdmin.Proto,
-    _?: boolean
-  ): MsgClearContractAdmin {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(data: MsgClearContractAdmin.Proto, _?: boolean) {
     const { sender, contract } = data as MsgClearContractAdmin.DataV2;
     return new MsgClearContractAdmin(sender, contract);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): MsgClearContractAdmin.Proto {
     return MsgClearAdmin_pb.fromPartial({
       sender: this.admin,
@@ -73,14 +70,13 @@ export class MsgClearContractAdmin extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: MsgClearContractAdmin.Data,
-    _?: boolean
-  ): MsgClearContractAdmin {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: MsgClearContractAdmin.Data, _?: boolean) {
     const { sender, contract } = data as MsgClearContractAdmin.DataV2;
     return new MsgClearContractAdmin(sender, contract);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): MsgClearContractAdmin.Data {
     return {
       '@type': '/cosmwasm.wasm.v1.MsgClearAdmin',

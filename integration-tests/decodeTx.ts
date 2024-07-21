@@ -1,5 +1,4 @@
 import { LCDClient, MsgSend, MnemonicKey } from '../src';
-import { SignMode } from '@terraclassic-community/terra.proto/cosmos/tx/signing/v1beta1/signing';
 
 async function main() {
   // create a key out of a mnemonic
@@ -25,12 +24,10 @@ async function main() {
     { uluna: 1312029 }
   );
 
-  const tx = await wallet
-    .createAndSignTx({
-      msgs: [send],
-      memo: 'decode test',
-	});
-
+  const tx = await wallet.createAndSignTx({
+    msgs: [send],
+    memo: 'decode test',
+  });
 
   const encoded = bombay.tx.encode(tx);
   const decoded = bombay.tx.decode(encoded);
@@ -38,7 +35,6 @@ async function main() {
   console.log(`\n\tstringified:${JSON.stringify(tx)}`);
   console.log(`\n\tencoded:${encoded}`);
   console.log(`\n\tdecoded:${JSON.stringify(decoded)}`);
-
 }
 
 main().catch(console.error);

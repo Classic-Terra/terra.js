@@ -2,7 +2,7 @@ import axios from 'axios';
 import { APIRequester } from './APIRequester';
 
 jest.mock('axios');
-const mockedAxios = jest.mocked(axios, true);
+const mockedAxios = jest.mocked(axios);
 
 describe('APIRequester', () => {
   beforeAll(() => {

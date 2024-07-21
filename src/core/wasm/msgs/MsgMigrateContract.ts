@@ -25,10 +25,8 @@ export class MsgMigrateContract extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: MsgMigrateContract.Amino,
-    _?: boolean
-  ): MsgMigrateContract {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: MsgMigrateContract.Amino, _?: boolean) {
     const {
       value: { sender, contract, code_id, msg },
     } = data as MsgMigrateContract.AminoV2;
@@ -40,6 +38,7 @@ export class MsgMigrateContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): MsgMigrateContract.Amino {
     const { admin, contract, new_code_id, migrate_msg } = this;
     return {
@@ -53,10 +52,8 @@ export class MsgMigrateContract extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: MsgMigrateContract.Proto,
-    _?: boolean
-  ): MsgMigrateContract {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: MsgMigrateContract.Proto, _?: boolean) {
     const p = proto as MsgMigrateContract_pb;
     return new MsgMigrateContract(
       p.sender,
@@ -66,6 +63,7 @@ export class MsgMigrateContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): MsgMigrateContract.Proto {
     const { admin, contract, new_code_id, migrate_msg } = this;
     return MsgMigrateContract_pb.fromPartial({
@@ -75,6 +73,7 @@ export class MsgMigrateContract extends JSONSerializable<
       msg: Buffer.from(JSON.stringify(migrate_msg), 'utf-8'),
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.MsgMigrateContract',
@@ -94,10 +93,8 @@ export class MsgMigrateContract extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: MsgMigrateContract.Data,
-    _?: boolean
-  ): MsgMigrateContract {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: MsgMigrateContract.Data, _?: boolean) {
     const { sender, contract, code_id, msg } =
       data as MsgMigrateContract.DataV2;
     return new MsgMigrateContract(
@@ -108,6 +105,7 @@ export class MsgMigrateContract extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): MsgMigrateContract.Data {
     const { admin, contract, new_code_id, migrate_msg } = this;
     return {

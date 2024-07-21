@@ -26,11 +26,7 @@ const changes = [{ subspace: 'staking', key: 'MaxValidators', value: '130' }];
 
 async function main() {
   const execute = new MsgSubmitProposal(
-    new ParameterChangeProposal(
-      title,
-      description,
-      changes
-    ),
+    new ParameterChangeProposal(title, description, changes),
     { uluna: 10000000 },
     wallet.key.accAddress
   );

@@ -26,7 +26,8 @@ export class MsgStoreCode extends JSONSerializable<
   public static fromAmino(
     data: MsgStoreCode.AminoV2 | MsgStoreCode.AminoV1,
     _?: boolean
-  ): MsgStoreCode {
+  ) {
+    _;
     const {
       value: { sender, wasm_byte_code, instantiate_permission },
     } = data as MsgStoreCode.AminoV2;
@@ -40,6 +41,7 @@ export class MsgStoreCode extends JSONSerializable<
   }
 
   public toAmino(_?: boolean): MsgStoreCode.AminoV2 {
+    _;
     const { sender, wasm_byte_code, instantiate_permission } = this;
     return {
       type: 'wasm/MsgStoreCode',
@@ -51,10 +53,8 @@ export class MsgStoreCode extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: MsgStoreCode.Proto,
-    _?: boolean
-  ): MsgStoreCode {
+  public static fromProto(proto: MsgStoreCode.Proto, _?: boolean) {
+    _;
     const p = proto as MsgStoreCode_pb;
     return new MsgStoreCode(
       p.sender,
@@ -66,6 +66,7 @@ export class MsgStoreCode extends JSONSerializable<
   }
 
   public toProto(_?: boolean): MsgStoreCode.Proto {
+    _;
     const { sender, wasm_byte_code, instantiate_permission } = this;
     return MsgStoreCode_pb.fromPartial({
       sender,
@@ -92,7 +93,8 @@ export class MsgStoreCode extends JSONSerializable<
   public static fromData(
     data: MsgStoreCode.DataV2 | MsgStoreCode.DataV1,
     _?: boolean
-  ): MsgStoreCode {
+  ) {
+    _;
     const { sender, wasm_byte_code, instantiate_permission } =
       data as MsgStoreCode.DataV2;
     return new MsgStoreCode(
@@ -105,6 +107,7 @@ export class MsgStoreCode extends JSONSerializable<
   }
 
   public toData(_?: boolean): MsgStoreCode.Data {
+    _;
     const { sender, wasm_byte_code, instantiate_permission } = this;
     return {
       '@type': '/cosmwasm.wasm.v1.MsgStoreCode',

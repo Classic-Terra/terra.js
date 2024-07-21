@@ -9,14 +9,14 @@ async function main() {
 
   const mk2 = new MnemonicKey({
     mnemonic:
-    	'quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty'
+      'quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty',
   });
 
   const bombay = new LCDClient({
     chainID: 'localterra',
     URL: 'http://localhost:1317',
     gasPrices: { uluna: 0.38 },
-    isClassic: true
+    isClassic: true,
   });
 
   // create a simple message that moves coin balances

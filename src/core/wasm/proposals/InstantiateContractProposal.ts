@@ -40,10 +40,12 @@ export class InstantiateContractProposal extends JSONSerializable<
     this.init_coins = new Coins(init_coins);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public static fromAmino(
     data: InstantiateContractProposal.Amino,
     _?: boolean
-  ): InstantiateContractProposal {
+  ) {
+    _;
     const {
       value: { title, description, run_as, admin, code_id, msg, funds, label },
     } = data as InstantiateContractProposal.Amino;
@@ -59,6 +61,7 @@ export class InstantiateContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): InstantiateContractProposal.Amino {
     const {
       title,
@@ -85,10 +88,12 @@ export class InstantiateContractProposal extends JSONSerializable<
     };
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public static fromProto(
     proto: InstantiateContractProposal.Proto,
     _?: boolean
-  ): InstantiateContractProposal {
+  ) {
+    _;
     return new InstantiateContractProposal(
       proto.title,
       proto.description,
@@ -101,6 +106,7 @@ export class InstantiateContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): InstantiateContractProposal.Proto {
     const {
       title,
@@ -143,10 +149,8 @@ export class InstantiateContractProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: InstantiateContractProposal.Data,
-    _?: boolean
-  ): InstantiateContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: InstantiateContractProposal.Data, _?: boolean) {
     const { title, description, run_as, admin, code_id, label, msg, funds } =
       data as InstantiateContractProposal.Data;
     return new InstantiateContractProposal(
@@ -161,6 +165,7 @@ export class InstantiateContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): InstantiateContractProposal.Data {
     const {
       title,
