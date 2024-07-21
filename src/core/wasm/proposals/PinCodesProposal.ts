@@ -25,10 +25,8 @@ export class PinCodesProposal extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: PinCodesProposal.Amino,
-    _?: boolean
-  ): PinCodesProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: PinCodesProposal.Amino, _?: boolean) {
     const {
       value: { title, description, code_ids },
     } = data as PinCodesProposal.Amino;
@@ -39,6 +37,7 @@ export class PinCodesProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): PinCodesProposal.Amino {
     const { title, description, code_ids } = this;
     return {
@@ -51,10 +50,8 @@ export class PinCodesProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: PinCodesProposal.Proto,
-    _?: boolean
-  ): PinCodesProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: PinCodesProposal.Proto, _?: boolean) {
     return new PinCodesProposal(
       proto.title,
       proto.description,
@@ -62,6 +59,7 @@ export class PinCodesProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): PinCodesProposal.Proto {
     const { title, description, code_ids } = this;
     return PinCodesProposal_pb.fromPartial({
@@ -70,6 +68,7 @@ export class PinCodesProposal extends JSONSerializable<
       codeIds: code_ids.map(cid => Long.fromNumber(cid)),
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.PinCodesProposal',
@@ -84,10 +83,8 @@ export class PinCodesProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: PinCodesProposal.Data,
-    _?: boolean
-  ): PinCodesProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: PinCodesProposal.Data, _?: boolean) {
     const { title, description, code_ids } = data as PinCodesProposal.Data;
     return new PinCodesProposal(
       title,
@@ -96,6 +93,7 @@ export class PinCodesProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): PinCodesProposal.Data {
     const { title, description, code_ids } = this;
     return {

@@ -35,10 +35,8 @@ export class ExecuteContractProposal extends JSONSerializable<
     this.coins = new Coins(coins);
   }
 
-  public static fromAmino(
-    data: ExecuteContractProposal.Amino,
-    _?: boolean
-  ): ExecuteContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: ExecuteContractProposal.Amino, _?: boolean) {
     const {
       value: { title, description, run_as, contract, msg, funds },
     } = data as ExecuteContractProposal.Amino;
@@ -52,6 +50,7 @@ export class ExecuteContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): ExecuteContractProposal.Amino {
     const { title, description, run_as, contract, execute_msg, coins } = this;
     return {
@@ -67,10 +66,8 @@ export class ExecuteContractProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: ExecuteContractProposal.Proto,
-    _?: boolean
-  ): ExecuteContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: ExecuteContractProposal.Proto, _?: boolean) {
     return new ExecuteContractProposal(
       proto.title,
       proto.description,
@@ -81,6 +78,7 @@ export class ExecuteContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): ExecuteContractProposal.Proto {
     const { title, description, run_as, contract, execute_msg, coins } = this;
     return ExecuteContractProposal_pb.fromPartial({
@@ -112,10 +110,8 @@ export class ExecuteContractProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: ExecuteContractProposal.Data,
-    _?: boolean
-  ): ExecuteContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: ExecuteContractProposal.Data, _?: boolean) {
     const { title, description, run_as, contract, msg, funds } =
       data as ExecuteContractProposal.Data;
     return new ExecuteContractProposal(
@@ -128,6 +124,7 @@ export class ExecuteContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): ExecuteContractProposal.Data {
     const { title, description, run_as, contract, execute_msg, coins } = this;
     return {

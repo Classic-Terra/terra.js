@@ -22,16 +22,15 @@ export class MsgUpdateContractAdmin extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: MsgUpdateContractAdmin.Amino,
-    _?: boolean
-  ): MsgUpdateContractAdmin {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: MsgUpdateContractAdmin.Amino, _?: boolean) {
     const {
       value: { sender, new_admin, contract },
     } = data as MsgUpdateContractAdmin.AminoV2;
     return new MsgUpdateContractAdmin(sender, new_admin, contract);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): MsgUpdateContractAdmin.Amino {
     const { admin, new_admin, contract } = this;
     return {
@@ -44,14 +43,13 @@ export class MsgUpdateContractAdmin extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: MsgUpdateContractAdmin.Proto,
-    _?: boolean
-  ): MsgUpdateContractAdmin {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: MsgUpdateContractAdmin.Proto, _?: boolean) {
     const p = proto as MsgUpdateAdmin_pb;
     return new MsgUpdateContractAdmin(p.sender, p.newAdmin, p.contract);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): MsgUpdateContractAdmin.Proto {
     const { admin, new_admin, contract } = this;
     return MsgUpdateAdmin_pb.fromPartial({
@@ -70,10 +68,7 @@ export class MsgUpdateContractAdmin extends JSONSerializable<
     });
   }
 
-  public static unpackAny(
-    msgAny: Any,
-    isClassic?: boolean
-  ): MsgUpdateContractAdmin {
+  public static unpackAny(msgAny: Any, isClassic?: boolean) {
     return MsgUpdateContractAdmin.fromProto(
       MsgUpdateAdmin_pb.decode(msgAny.value),
       isClassic
@@ -83,7 +78,7 @@ export class MsgUpdateContractAdmin extends JSONSerializable<
   public static fromData(
     data: MsgUpdateContractAdmin.Data,
     isClassic?: boolean
-  ): MsgUpdateContractAdmin {
+  ) {
     if (isClassic) {
       const { admin, new_admin, contract } =
         data as MsgUpdateContractAdmin.DataV1;

@@ -25,9 +25,9 @@ async function main() {
     mnemonic:
       'shrug resist find inch narrow tumble knee fringe wide mandate angry sense grab rack fork snack family until bread lake bridge heavy goat want',
   });
-  console.log(mk1.accAddress)
-  console.log(mk2.accAddress)
-  console.log(mk3.accAddress)
+  console.log(mk1.accAddress);
+  console.log(mk2.accAddress);
+  console.log(mk3.accAddress);
 
   const multisigPubkey = new LegacyAminoMultisigPublicKey(2, [
     mk1.publicKey as SimplePublicKey,

@@ -106,7 +106,7 @@ export class LazyGradedVestingAccount extends JSONSerializable<
     _;
     const { base_vesting_account, vesting_schedules } = this;
 
-    return LazyGradedVestingAccount_pb.fromPartial({
+    return LazyGradedVestingAccount_pb.fromJSON({
       baseVestingAccount: base_vesting_account.toProto(),
       vestingSchedules: vesting_schedules.map(s => s.toProto()),
     });
@@ -210,7 +210,7 @@ export namespace LazyGradedVestingAccount {
 
     public toProto(): VestingSchedule.Proto {
       const { denom, schedules } = this;
-      return VestingSchedule_pb.fromPartial({
+      return VestingSchedule_pb.fromJSON({
         denom,
         schedules: schedules.map(s => s.toProto()),
       });

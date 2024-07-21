@@ -11,8 +11,13 @@ async function main() {
     `Txs Page 1: ${JSON.stringify(
       (
         await terra.tx.search({
-          events: [{ key: 'tx.height', value: '8343' },
-			  {key:'message.sender', value:'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38p'}],
+          events: [
+            { key: 'tx.height', value: '8343' },
+            {
+              key: 'message.sender',
+              value: 'terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38p',
+            },
+          ],
           'pagination.limit': '100',
         })
       ).txs.map(tx => tx.txhash)

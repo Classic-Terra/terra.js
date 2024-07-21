@@ -23,16 +23,15 @@ export class SudoContractProposal extends JSONSerializable<
     super();
   }
 
-  public static fromAmino(
-    data: SudoContractProposal.Amino,
-    _?: boolean
-  ): SudoContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromAmino(data: SudoContractProposal.Amino, _?: boolean) {
     const {
       value: { title, description, contract, msg },
     } = data as SudoContractProposal.Amino;
     return new SudoContractProposal(title, description, contract, msg);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toAmino(_?: boolean): SudoContractProposal.Amino {
     const { title, description, contract, msg } = this;
     return {
@@ -46,10 +45,8 @@ export class SudoContractProposal extends JSONSerializable<
     };
   }
 
-  public static fromProto(
-    proto: SudoContractProposal.Proto,
-    _?: boolean
-  ): SudoContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromProto(proto: SudoContractProposal.Proto, _?: boolean) {
     return new SudoContractProposal(
       proto.title,
       proto.description,
@@ -58,6 +55,7 @@ export class SudoContractProposal extends JSONSerializable<
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toProto(_?: boolean): SudoContractProposal.Proto {
     const { title, description, contract, msg } = this;
     return SudoContractProposal_pb.fromPartial({
@@ -67,6 +65,7 @@ export class SudoContractProposal extends JSONSerializable<
       msg: Buffer.from(JSON.stringify(msg), 'utf-8'),
     });
   }
+
   public packAny(isClassic?: boolean): Any {
     return Any.fromPartial({
       typeUrl: '/cosmwasm.wasm.v1.SudoContractProposal',
@@ -84,15 +83,14 @@ export class SudoContractProposal extends JSONSerializable<
     );
   }
 
-  public static fromData(
-    data: SudoContractProposal.Data,
-    _?: boolean
-  ): SudoContractProposal {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public static fromData(data: SudoContractProposal.Data, _?: boolean) {
     const { title, description, contract, msg } =
       data as SudoContractProposal.Data;
     return new SudoContractProposal(title, description, contract, msg);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public toData(_?: boolean): SudoContractProposal.Data {
     const { title, description, contract, msg } = this;
     return {

@@ -27,12 +27,15 @@ wsclient.subscribe(
 );
 
 // swap tracker
-wsclient.subscribeTx({ 'message.action': '/terra.market.v1beta1.MsgSwap' }, async data => {
-  console.log('Swap occured!');
-  const txInfo = await terra.tx.txInfo(data.value.TxResult.txhash);
-  if (txInfo.logs) {
-    console.log(txInfo.logs[0].eventsByType);
+wsclient.subscribeTx(
+  { 'message.action': '/terra.market.v1beta1.MsgSwap' },
+  async data => {
+    console.log('Swap occured!');
+    const txInfo = await terra.tx.txInfo(data.value.TxResult.txhash);
+    if (txInfo.logs) {
+      console.log(txInfo.logs[0].eventsByType);
+    }
   }
-});
+);
 
 wsclient.start();

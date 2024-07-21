@@ -15,7 +15,7 @@ import { ParameterChangeProposal as ParameterChangeProposal_pb } from '@terra-mo
  *    Dec,
  *    MsgSubmitProposal,
  *    ParameterChangeProposal
- * } from "@terraclassic-community/terra.js";
+ * } from "@classic-terra/terra.js";
  *
  * const proposal = new ParameterChangeProposal("title", "description", {
  *    market: {

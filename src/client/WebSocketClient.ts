@@ -99,7 +99,7 @@ function makeQueryParams(query: TendermintQuery): string {
  * ### Example
  *
  * ```ts
- * import { WebSocketClient } from '@terraclassic-community/terra.js';
+ * import { WebSocketClient } from '@classic-terra/terra.js';
  *
  * const wsclient = new WebSocketClient("ws://localhost:26657/websocket");
  *

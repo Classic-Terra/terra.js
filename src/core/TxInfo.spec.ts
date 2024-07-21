@@ -73,7 +73,7 @@ const instantiateContractTxAmino = {
           validator: 'terravaloper1vk20anceu6h9s00d27pjlvslz3avetkvnwmr35',
         },
       ],
-      memo: '@terraclassic-community/oracle-feeder@1.4.6',
+      memo: '@classic-terra/oracle-feeder@1.4.6',
       timeout_height: '0',
       extension_options: [],
       non_critical_extension_options: [],

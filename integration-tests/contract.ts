@@ -19,8 +19,12 @@ const { test1 } = terra.wallets;
 async function main(): Promise<void> {
   const storeCode = new MsgStoreCode(
     test1.key.accAddress,
-    fs.readFileSync(isLegacy ? 'contract.wasm.7' : 'contract.wasm.8').toString('base64'),
-    isLegacy ? undefined : new AccessConfig(AccessType.ACCESS_TYPE_EVERYBODY, "")
+    fs
+      .readFileSync(isLegacy ? 'contract.wasm.7' : 'contract.wasm.8')
+      .toString('base64'),
+    isLegacy
+      ? undefined
+      : new AccessConfig(AccessType.ACCESS_TYPE_EVERYBODY, '')
   );
   const storeCodeTx = await test1.createAndSignTx({
     msgs: [storeCode],
@@ -41,9 +45,9 @@ async function main(): Promise<void> {
     test1.key.accAddress,
     undefined,
     +codeId, // code ID
-    { count: 0, }, // InitMsg
+    { count: 0 }, // InitMsg
     { uluna: 1000000 }, // init coins
-    "testlabel",
+    'testlabel'
   );
 
   const instantiateTx = await test1.createAndSignTx({
@@ -73,13 +77,14 @@ async function main(): Promise<void> {
   const executeTxResult = await terra.tx.broadcastBlock(executeTx);
   console.log(executeTxResult);
 
-  console.log(await terra.wasm.contractQuery(contractAddress, { "get_count": {} }));
+  console.log(
+    await terra.wasm.contractQuery(contractAddress, { get_count: {} })
+  );
 
   const [history, _] = await terra.wasm.contractHistory(contractAddress);
   console.log(history.map(h => h.toData()));
   console.log(JSON.stringify(await terra.wasm.contractInfo(contractAddress)));
   console.log(JSON.stringify(await terra.wasm.codeInfo(+codeId)));
-
 }
 
-main().then(console.log).catch(console.log)
+main().then(console.log).catch(console.log);

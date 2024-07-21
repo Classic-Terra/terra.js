@@ -73,7 +73,7 @@ export class AggregateExchangeRateVote extends JSONSerializable<
 
   public toProto(): AggregateExchangeRateVote.Proto {
     const { exchange_rate_tuples, voter } = this;
-    return AggregateExchangeRateVote_pb.fromPartial({
+    return AggregateExchangeRateVote_pb.fromJSON({
       exchangeRateTuples: exchange_rate_tuples.map(t => t.toProto()),
       voter,
     });

@@ -106,7 +106,7 @@ export class AddBurnTaxExemptionAddressProposal extends JSONSerializable<
       throw new Error('Not supported for the network');
     }
     const { title, description, addresses } = this;
-    return AddBurnTaxExemptionAddressProposal_pb.fromPartial({
+    return AddBurnTaxExemptionAddressProposal_pb.fromJSON({
       title,
       description,
       addresses,

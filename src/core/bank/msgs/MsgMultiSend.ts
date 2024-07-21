@@ -19,7 +19,7 @@ import {
  * Example:
  *
  * ```ts
- * import { MsgMultiSend } from "@terraclassic-community/terra.js";
+ * import { MsgMultiSend } from "@classic-terra/terra.js";
  *
  * const inputs: MsgMultiSend.Input[] = [
  *    new MsgMultiSend.Input(
